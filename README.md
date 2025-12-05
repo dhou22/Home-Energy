@@ -80,18 +80,18 @@ This research project implements a comprehensive pipeline for residential energy
 
 This project synthesizes methodologies from cutting-edge research in energy forecasting, feature selection, and machine learning optimization. The following table maps each research paper to its specific application in our pipeline:
 
-| Research Paper | Year  | Application in Project | Pipeline Stage |
-|---------------|------|------------------------|----------------|
-| **Ahmad et al.** | 2024 | Feature selection methods combining correlation, mutual information, and tree-based importance | [3] Feature Engineering, [5] EDA |
-| **Wang et al.** | 2023 | Multi-method correlation analysis (Pearson, Spearman, Kendall) for smart home datasets | [5] Exploratory Data Analysis |
-| **Mocanu et al.** | 2023 | Feature importance in deep learning validation | [5] EDA - Feature Analysis |
-| **Zhang & Chen** | 2022 | Multicollinearity detection and mitigation strategies | [3] Feature Engineering |
-| **Raza & Khosravi** | 2015/2023 | Tree-based methods for capturing feature interactions in energy data | [5] EDA, [6] Modeling |
-| **Servis** | 2024 | Anti-leakage methodology: lag period ≥ forecast horizon | [3] Feature Engineering |
-| **Shi et al.** | 2024 | Random Forest hyperparameter optimization for short-term load forecasting (STLF) on CPU-constrained systems | [6] Predictive Modeling |
-| **Lu et al. (Stratified Sampling)** | 2021 | Stratified sampling and temporal validation principles | [6] Predictive Modeling |
-| **Chen & Guestrin** | 2016 | XGBoost histogram-based algorithm and early stopping mechanisms | [6] Predictive Modeling |
-| **Energy Forecasting Benchmarking Studies** | 2022-2024 | Comparative benchmarking of Random Forest, XGBoost, and SVR | [7] Evaluation Metrics |
+| Research Paper | Application in Project | Pipeline Stage |
+|---------------|------------------------|----------------|
+| **Machine Learning Methods for Forecasting and Modeling in Smart Grid** (Ahmad et al., 2024) | Feature selection methods combining correlation, mutual information, and tree-based importance | [3] Feature Engineering, [5] EDA |
+| **Deep Learning Based Ensemble Approach for Probabilistic Wind Power Forecasting** (Wang et al., 2023) | Multi-method correlation analysis (Pearson, Spearman, Kendall) for smart home datasets | [5] Exploratory Data Analysis |
+| **A Deep Learning Architecture for Predictive Analytics in Energy Systems** (Mocanu et al., 2023) | Feature importance in deep learning validation | [5] EDA - Feature Analysis |
+| **Data Consistency for Data-Driven Smart Energy Assessment** (Zhang & Chen, 2022) | Multicollinearity detection and mitigation strategies | [3] Feature Engineering |
+| **A Review on Artificial Intelligence Based Load Demand Forecasting Techniques for Smart Grid and Buildings** (Raza & Khosravi, 2015) | Tree-based methods for capturing feature interactions in energy data | [5] EDA, [6] Modeling |
+| **A Practical Time Series Forecasting Guideline for Machine Learning** (Servis, 2024) | Anti-leakage methodology: lag period ≥ forecast horizon | [3] Feature Engineering |
+| **Short-Term Load Forecasting Based on Optimized Random Forest and Optimal Feature Selection** (Shi et al., 2024) | Random Forest hyperparameter optimization for short-term load forecasting (STLF) on CPU-constrained systems | [6] Predictive Modeling |
+| **Variance Reduced Training with Stratified Sampling for Forecasting Models** (Lu et al., 2021) | Stratified sampling and temporal validation principles | [6] Predictive Modeling |
+| **XGBoost: A Scalable Tree Boosting System** (Chen & Guestrin, 2016) | XGBoost histogram-based algorithm and early stopping mechanisms | [6] Predictive Modeling |
+| **Energy Forecasting in a Public Building: A Benchmarking Analysis on LSTM, SVR, and XGBoost Networks** (Chung & Gu, 2022) | Comparative benchmarking of Random Forest, XGBoost, and SVR | [7] Evaluation Metrics |
 
 ---
 
@@ -126,6 +126,8 @@ This project synthesizes methodologies from cutting-edge research in energy fore
   
 <img width="1878" height="706" alt="Capture d&#39;écran 2025-12-05 000643" src="https://github.com/user-attachments/assets/e87e001b-f6d7-4c5b-8b20-7ad616a58c9a" />
 
+-----
+
 </div>
 
 ### Dataset Specifications
@@ -134,6 +136,8 @@ This project synthesizes methodologies from cutting-edge research in energy fore
 http://archive.ics.uci.edu/dataset/235/individual+household+electric+power+consumption
 
 <img width="909" height="302" alt="Capture d&#39;écran 2025-12-04 171118" src="https://github.com/user-attachments/assets/d18fa0a6-4849-4317-aa98-c77c73dee0a2" />
+
+-----
 
 - **Temporal Coverage:** December 2006 - November 2010 (47 months)
 - **Granularity:** 1-minute sampling intervals
@@ -163,6 +167,8 @@ The raw dataset employs semicolon-separated values with non-standard missing val
 ## [2] Data Cleaning & Quality Assurance
 
 <img width="1468" height="647" alt="Capture d&#39;écran 2025-12-04 172319" src="https://github.com/user-attachments/assets/75fdef49-43e9-46f6-a0b7-ccae85ba7346" />
+
+------
 
 ### Initial Assessment
 
@@ -217,6 +223,8 @@ Enforced domain-specific constraints based on European electrical standards:
 ## [3] Feature Engineering: Anti-Leakage Design
 
 <img width="1595" height="837" alt="Capture d&#39;écran 2025-12-04 191113" src="https://github.com/user-attachments/assets/89b540dd-71c9-4f0c-a5b0-ed3aa9965fdc" />
+
+-----
 
 ### Critical Principle: Preventing Data Leakage
 
@@ -275,6 +283,9 @@ Moving averages and standard deviations over temporal windows:
 
 **Final Feature Count:** 39 engineered features
 
+<img width="1871" height="456" alt="image" src="https://github.com/user-attachments/assets/da0fcc71-8106-4792-8815-770787a784c2" />
+
+
 ---
 
 ## [4] SQL Database Architecture
@@ -297,17 +308,26 @@ households (1) ──────── (*) daily_consumption
 
 <img width="1610" height="450" alt="image" src="https://github.com/user-attachments/assets/c3ad55af-8c6d-4939-b44b-bfdc114524bc" />
 
+-----
+
 **`hourly_consumption` (Aggregated View):** Pre-computed hourly statistics reducing query time by 95%
 
 <img width="1518" height="399" alt="image" src="https://github.com/user-attachments/assets/aa6a7c87-3253-4277-9dee-470aa64cf429" />
 
+-------
+
 **`predictions` (Model Outputs):** Forecasted values with confidence metrics
+
+<img width="1604" height="222" alt="Capture d&#39;écran 2025-12-05 003007" src="https://github.com/user-attachments/assets/14fd88b2-d014-421d-b6cb-946fffb68cd5" />
+
 
 ---
 
 ## [5] Exploratory Data Analysis
 
 <img width="1913" height="874" alt="Capture d&#39;écran 2025-12-04 183309" src="https://github.com/user-attachments/assets/2758cbc8-116b-4215-8481-85451a1c7705" />
+
+-----
 
 ### Feature Correlation Analysis
 
@@ -320,6 +340,8 @@ households (1) ──────── (*) daily_consumption
 ### Temporal Consumption Patterns
 
 <img width="4165" height="3562" alt="distributions" src="https://github.com/user-attachments/assets/e938b411-2cad-459e-8cb6-500f3c7f4098" />
+
+-----
 
 **Daily Profile:**
 - Morning surge: 7:00-9:00 AM (avg 1.8 kW)
@@ -338,6 +360,8 @@ households (1) ──────── (*) daily_consumption
 
 <img width="5951" height="1796" alt="correlation_matrices" src="https://github.com/user-attachments/assets/4bce99f9-47b6-4baf-8a03-d96b581a88f4" />
 
+-----
+
 **Top correlates with target (after removing forbidden variables):**
 - `Sub_metering_3`: r = 0.73 (electric heating)
 - `Sub_metering_1`: r = 0.21 (kitchen appliances)
@@ -348,11 +372,15 @@ households (1) ──────── (*) daily_consumption
 
 <img width="2972" height="1768" alt="mi_vs_correlation" src="https://github.com/user-attachments/assets/03425753-a2ee-41b1-933d-b373e225a71c" />
 
+-----
+
 **Key Finding:** Variables showing high MI but low Pearson correlation indicate non-linear relationships captured by mutual information analysis (Ahmad et al., 2024).
 
 ### Principal Component Analysis
 
 <img width="2971" height="1768" alt="pca_variance" src="https://github.com/user-attachments/assets/05398bcf-bb8d-4626-b57b-b7d7591e86dd" />
+
+-----
 
 **Variance Explained:** 
 - PC1: 32.7% (individual variance)
@@ -444,6 +472,8 @@ $$\hat{y}^{(t)} = \hat{y}^{(t-1)} + \eta \cdot f_t(x)$$
 
 <img width="4469" height="3543" alt="predictions" src="https://github.com/user-attachments/assets/b919dcc9-d7d3-4cd5-9088-6d4a226cfa86" />
 
+-----
+
 #### R² (Coefficient of Determination)
 
 **Definition:**
@@ -476,6 +506,8 @@ $$\text{RMSE} = \sqrt{\frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y}_i)^2}$$
 
 <img width="4170" height="4131" alt="metrics_comparison" src="https://github.com/user-attachments/assets/d20b6acb-09a4-473f-9b19-06b0da427953" />
 
+-----
+
 **Results:**
 
 | Model | MAE (kW) | MAPE (%) |
@@ -489,6 +521,8 @@ $$\text{RMSE} = \sqrt{\frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y}_i)^2}$$
 ### Tolerance-Based Classification Metrics
 
 <img width="4770" height="3543" alt="classification_metrics" src="https://github.com/user-attachments/assets/8077449c-0454-4ddc-86b0-43a64d1ced76" />
+
+-----
 
 #### Accuracy Across Tolerances
 
@@ -519,7 +553,9 @@ $$\text{Accuracy}_{\epsilon} = \frac{1}{n}\sum_{i=1}^{n} \mathbb{1}\left[\left|\
 
 ### Feature Importance Analysis
 
-<img width="5000" height="3000" alt="feature_importance" src="https://github.com/user-attachments/assets/placeholder" />
+<img width="4770" height="1166" alt="feature_importance" src="https://github.com/user-attachments/assets/61e73ba2-dc13-45a1-9221-a19bb5afd899" />
+
+-----
 
 #### Random Forest Top Features
 
@@ -606,10 +642,9 @@ $$\text{Accuracy}_{\epsilon} = \frac{1}{n}\sum_{i=1}^{n} \mathbb{1}\left[\left|\
 
 ## 📧 Contact
 
-**Dhouha Meliane**  
-Advanced Data Science Research Lab  
-Email: [dhouha.meliane@example.com]  
-LinkedIn: [linkedin.com/in/dhouha-meliane]
+**Dhouha Meliane**   
+Email: [dhouha.meliane@esprit.tn]  
+Linkedin: https://www.linkedin.com/in/dhouha-meliane/
 
 ---
 
