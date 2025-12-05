@@ -591,10 +591,9 @@ $$\text{Accuracy}_{\epsilon} = \frac{1}{n}\sum_{i=1}^{n} \mathbb{1}\left[\left|\
 
 1. **Source Code:** Modular Python scripts with comprehensive docstrings
 2. **SQL Schema:** Normalized database design with indexing strategies
-3. **Notebooks:** Jupyter notebooks for each pipeline stage
-4. **Data Exports:** CSV, JSON, SQL dump formats
-5. **Visualizations:** High-resolution figures for all analyses
-6. **Data Dictionary:** Complete variable descriptions and units
+3. **Data Exports:** CSV, JSON, SQL dump formats, png
+4. **Visualizations:** High-resolution figures for all analyses
+5. **Data Dictionary:** Complete variable descriptions and units
 
 ## 🎓 Scientific Impact
 
@@ -609,6 +608,10 @@ $$\text{Accuracy}_{\epsilon} = \frac{1}{n}\sum_{i=1}^{n} \mathbb{1}\left[\left|\
 4. **Interpretability:** Feature importance analysis identifying lag-1 consumption and hourly rolling statistics as dominant predictors
 
 ### Real-World Applications
+
+<img width="3907" height="2282" alt="image" src="https://github.com/user-attachments/assets/adc06447-3352-4534-ae5f-59c780b9471d" />
+
+-----
 
 - **Demand Response:** 77.6% accuracy within ±10% enables reliable load scheduling
 - **Anomaly Detection:** MAPE <10% facilitates identification of abnormal consumption patterns
