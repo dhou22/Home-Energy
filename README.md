@@ -2,7 +2,8 @@
 
 <div align="center">
   
-<img width="1875" height="1095" alt="image" src="https://github.com/user-attachments/assets/89ec07d9-c3ca-4882-85b5-339638146cca" />
+<img width="1875" height="1095" alt="image" src="https://github.com/user-attachments/assets/5f67caaa-8658-41d6-9dad-0bcb064ff034" />
+
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
@@ -609,7 +610,8 @@ $$\text{Accuracy}_{\epsilon} = \frac{1}{n}\sum_{i=1}^{n} \mathbb{1}\left[\left|\
 
 ### Real-World Applications
 
-<img width="3907" height="2282" alt="image" src="https://github.com/user-attachments/assets/adc06447-3352-4534-ae5f-59c780b9471d" />
+<img width="1875" height="1095" alt="image" src="https://github.com/user-attachments/assets/0b27a652-0105-414b-a2b6-9df2bfbbec36" />
+
 
 -----
 
