@@ -2,7 +2,8 @@
 
 <div align="center">
   
-<img width="1875" height="1095" alt="image" src="https://github.com/user-attachments/assets/5f67caaa-8658-41d6-9dad-0bcb064ff034" />
+<img width="900" height="514" alt="image" src="https://github.com/user-attachments/assets/6365cadf-ab24-4784-b603-74f87727551f" />
+
 
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/)
